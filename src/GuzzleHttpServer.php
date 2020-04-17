@@ -17,7 +17,7 @@ class GuzzleHttpServer
         try {
             $response = $client->request('get', $uri, $option);
 
-            return json_decode((string)$response->getBody(), true);
+            return self::handle_response($response);
         } catch (RequestException $e) {
             throw new ComException($e->getMessage(), $e->getCode());
         }
@@ -36,7 +36,7 @@ class GuzzleHttpServer
                         'body' => json_encode($params, JSON_UNESCAPED_UNICODE)
                     ];
                 }
-                elseif($body_type === 'json') {
+                elseif ($body_type === 'json') {
                     $post_data = [
                         'json' => $params
                     ];
@@ -45,11 +45,19 @@ class GuzzleHttpServer
 
             $response = $client->request('post', $uri, $post_data);
 
-            $data = json_decode((string)$response->getBody(), true);
-
-            return $data;
+            return self::handle_response($response);
         } catch (RequestException $e) {
             throw new ComException($e->getMessage(), $e->getCode());
+        }
+    }
+
+    protected static function handle_response($input)
+    {
+        if ($res = json_decode((string)$input->getBody(), true)) {
+            return $res;
+        }
+        else {
+            return (string)$input->getBody();
         }
     }
 }
