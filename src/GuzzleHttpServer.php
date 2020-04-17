@@ -4,7 +4,7 @@
 namespace ChrisGuzzleHttp;
 
 
-use App\Exceptions\ComException;
+use ChrisGuzzleHttp\Exceptions\ComException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 
