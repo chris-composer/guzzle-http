@@ -1,5 +1,5 @@
 {
-    "name": "chris-composer/curl",
+    "name": "chris-composer/guzzle-http",
     "description": "chris 的 curl 包",
     "license": "LGPL-3.0+",
     "authors": [
