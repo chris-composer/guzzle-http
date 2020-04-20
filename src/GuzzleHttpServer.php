@@ -1,10 +1,10 @@
 <?php
 
 
-namespace ChrisGuzzleHttp;
+namespace ChrisComposer\GuzzleHttp;
 
 
-use ChrisGuzzleHttp\Exceptions\ComException;
+use ChrisComposer\GuzzleHttp\Exceptions\ComException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 

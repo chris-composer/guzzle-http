@@ -1,6 +1,6 @@
 <?php
 
-namespace ChrisGuzzleHttp\Exceptions;
+namespace ChrisComposer\GuzzleHttp\Exceptions;
 
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
